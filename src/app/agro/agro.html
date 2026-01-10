@@ -1,0 +1,78 @@
+<div class="min-h-screen bg-stone-50 overflow-x-hidden font-sans selection:bg-amber-200">
+  
+  <header class="relative h-[40vh] flex items-center bg-stone-100 overflow-hidden border-b border-stone-200">
+    <div class="absolute left-0 top-0 w-full lg:w-[45%] h-full bg-amber-700/90 z-10 origin-top-left -skew-x-12 border-r-8 border-amber-500/30 backdrop-blur-sm"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 w-full relative z-20">
+      <button (click)="goBack()" class="flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-6 uppercase text-[10px] font-bold tracking-widest">
+        <span>←</span> Back to Portfolio
+      </button>
+      <h1 class="text-5xl md:text-7xl font-serif font-bold text-neutral-900 lg:text-white leading-none">
+        Agro <br> <span class="italic text-amber-500 lg:text-amber-300">Commodities</span>
+      </h1>
+    </div>
+  </header>
+
+  <section class="py-24 relative">
+    <div class="absolute -right-10 top-20 text-[15rem] font-serif font-bold text-stone-100 select-none pointer-events-none opacity-60">
+      Harvest
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        
+        <div class="col-span-12 lg:col-span-4 space-y-12">
+          <div class="p-8 bg-neutral-900 text-white shadow-2xl relative border-t-8 border-amber-600">
+            <h4 class="text-amber-500 text-[10px] font-bold uppercase tracking-[0.4em] mb-6">Trade Compliance</h4>
+            <ul class="space-y-4 text-xs text-stone-400">
+              <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> APEDA Registered</li>
+              <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> FSSAI Quality Certified</li>
+              <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Global Gap Standards</li>
+            </ul>
+          </div>
+
+          <div class="p-8 border-l-4 border-stone-200">
+            <p class="text-neutral-500 text-sm italic leading-relaxed">
+              "We bridge the gap between Indian fertile lands and global dining tables through meticulous logistics."
+            </p>
+          </div>
+        </div>
+
+        <div class="col-span-12 lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div *ngFor="let prod of products" 
+               class="group bg-white border border-stone-100 shadow-xl shadow-stone-200/40 overflow-hidden hover:border-amber-500/30 transition-all duration-500">
+            
+            <div class="h-64 overflow-hidden relative">
+              <div class="absolute inset-0 bg-neutral-900/10 group-hover:bg-amber-900/20 transition-colors duration-500 z-10"></div>
+              <img [src]="prod.image" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000" />
+              <div class="absolute top-4 right-4 bg-white/60 backdrop-blur-md px-3 py-1 text-[9px] font-extrabold uppercase tracking-widest text-amber-700 z-20">Premium Grade</div>
+            </div>
+
+            <div class="p-8 space-y-6">
+              <h4 class="text-xl font-bold text-neutral-900 uppercase tracking-widest">{{ prod.name }}</h4>
+              
+              <div class="space-y-3">
+                <div class="flex justify-between text-[10px] border-b border-stone-100 pb-2">
+                  <span class="font-bold text-stone-400 uppercase tracking-tighter">Origin:</span>
+                  <span class="text-neutral-800 font-medium">{{ prod.origin }}</span>
+                </div>
+                <div class="flex justify-between text-[10px] border-b border-stone-100 pb-2">
+                  <span class="font-bold text-stone-400 uppercase tracking-tighter">Packaging:</span>
+                  <span class="text-neutral-800 font-medium">{{ prod.packaging }}</span>
+                </div>
+              </div>
+
+              <p class="text-xs text-neutral-500 leading-relaxed">{{ prod.description }}</p>
+              
+              <button class="w-full py-4 border border-stone-200 text-[10px] font-bold uppercase tracking-widest text-neutral-900 hover:bg-amber-600 hover:text-white hover:border-amber-600 transition-all duration-300">
+                Enquire Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>

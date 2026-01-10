@@ -1,0 +1,54 @@
+/* Navigation Pill Styles */
+.pill-nav-link {
+  @apply px-4 py-2 text-[11px] font-bold uppercase tracking-widest text-neutral-500 cursor-pointer rounded-full transition-all duration-300;
+}
+
+.pill-nav-link:hover {
+  @apply text-amber-700 bg-amber-50/50;
+}
+
+/* Animations */
+@keyframes floatNav {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+}
+
+nav.max-w-fit {
+  animation: floatNav 4s ease-in-out infinite;
+}
+
+nav:hover {
+  animation-play-state: paused;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mirror Text Reflection Utility */
+.scale-y-neg-1 {
+  transform: scaleY(-1);
+}
+
+@keyframes marquee-seamless {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-seamless {
+  animation: marquee-seamless 2s linear infinite;
+}
+
+.pause-animation {
+  animation-play-state: paused;
+}
